@@ -14,7 +14,7 @@ import org.springframework.web.servlet.support.AbstractDispatcherServletInitiali
 public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[]{SpringConfig.class};
+        return new Class[0];
     }
 
     protected Class<?>[] getServletConfigClasses() {

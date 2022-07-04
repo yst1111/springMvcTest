@@ -14,10 +14,10 @@ public class UserController {
 
     @RequestMapping("/save")//2.2访问路径
     @ResponseBody//2.3返回值类型
-    public String save(String name){
-        System.out.println("user save ..."+name);
+    public String save(String name) {
+        System.out.println("user save ..." + name);
 //        return " 'module' : 'springmvc' ";
-        return "save";
+        return "save" + name;
     }
 
 
