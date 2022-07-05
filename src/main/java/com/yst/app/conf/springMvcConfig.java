@@ -12,6 +12,5 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 @Configuration//3.创建springmvc配置文件,加载controller类型的bean
 @ComponentScan("com.yst.app.controller")//3.1扫描controller
 @EnableWebMvc
-@Slf4j
 public class springMvcConfig {
 }

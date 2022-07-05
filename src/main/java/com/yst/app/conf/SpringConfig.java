@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
  * @creator: ly-yangst
  * @date: 2022/7/4
  */
-@Slf4j
 @Configuration
 @ComponentScan(
         value = "com.yst.app",
