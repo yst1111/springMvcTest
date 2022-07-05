@@ -48,8 +48,9 @@ public class UserController {
 
     @RequestMapping("/selectStudentById")
     @ResponseBody
-    public Student selectStudentById(@RequestParam String id) {
+    public Student selectStudentById(@RequestParam String id){
         System.out.println("selectStudentById -- > " + id);
+        int i = 1/0;//模拟异常
         return userService.selectStudentById(id);
 
     }
