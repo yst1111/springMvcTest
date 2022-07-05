@@ -1,8 +1,6 @@
 package com.yst.app.conf;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.FilterType;
+import org.springframework.context.annotation.*;
 import org.springframework.stereotype.Controller;
 
 /**
@@ -17,6 +15,8 @@ import org.springframework.stereotype.Controller;
                 classes = Controller.class
         )
 )
+@PropertySource("classpath:jdbc.properties")
+@Import({JdbcConfig.class,MybatisConfig.class}) //整合jdbc和mybatis,将两个配置类注册成bean
 public class SpringConfig {
 
 }

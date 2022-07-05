@@ -1,10 +1,9 @@
 package com.yst.app.conf;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
+import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-import org.springframework.web.servlet.support.AbstractDispatcherServletInitializer;
+
+import javax.servlet.Filter;
 
 /**
  * @creator: ly-yangst
@@ -14,7 +13,7 @@ import org.springframework.web.servlet.support.AbstractDispatcherServletInitiali
 public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[0];
+        return new Class[]{SpringConfig.class}; //Class[0]
     }
 
     protected Class<?>[] getServletConfigClasses() {
@@ -23,6 +22,13 @@ public class ServletContainersInitConfig extends AbstractAnnotationConfigDispatc
 
     protected String[] getServletMappings() {
         return new String[]{"/"};
+    }
+
+    //解决中文乱码
+    protected Filter[] getServletFilters() {
+        CharacterEncodingFilter filter = new CharacterEncodingFilter();
+        filter.setEncoding("UTF-8");
+        return new CharacterEncodingFilter[]{filter};
     }
 
 //    //加载springMvc容器配置

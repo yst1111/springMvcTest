@@ -2,6 +2,7 @@ package com.yst.app.conf;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 /**
  * @creator: ly-yangst
@@ -9,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
  */
 @Configuration//3.创建springmvc配置文件,加载controller类型的bean
 @ComponentScan("com.yst.app.controller")//3.1扫描controller
+@EnableWebMvc
 public class springMvcConfig {
 
 }
